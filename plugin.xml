@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-scan"
+    version="1.0">
+    <name>Scan</name>
+    <description>Cordova Scan Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,scan</keywords>
+    <repo>https://github.com/abcxofucksharonnywu/cordova-plugin-scan.git</repo>
+    <issue>https://issues.apache.org/jira/browse/CB/component/12320648</issue>
+    
+    <js-module src="www/scan.js" name="scan">
+        <clobbers target="scan" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="scan" >
+                <param name="android-package" value="com.thomas.BroadcastDemo.Scan"/>
+            </feature>
+        </config-file>
+        
+        <source-file src="src/android/libs/core.jar" target-dir="libs"/>
+        <source-file src="src/android/res/drawable-xhdpi/ic_launcher.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/res/drawable-xhdpi/back.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/res/drawable-xhdpi/flashlight.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/res/drawable-xhdpi/scan_center_line.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/res/drawable-xhdpi/scan_left_top.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/res/drawable-xhdpi/scan_right_top.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/res/drawable-xhdpi/scan_left_bottom.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/res/drawable-xhdpi/scan_right_bottom.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/res/layout/activity_capture.xml" target-dir="res/layout"/>
+        <source-file src="src/android/res/raw/beep.ogg" target-dir="res/raw"/>
+        <source-file src="src/android/res/raw/realm_properties" target-dir="res/raw"/>
+        <source-file src="src/android/res/values/ids.xml" target-dir="res/values"/>
+        <!-- <source-file src="src/android/res/values/color.xml" target-dir="res/values"/> -->
+        
+        
+        <config-file target="res/values/strings.xml" parent="/resources">
+            <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+            <string name="scan_pile_code">请扫描充电桩上的二维码</string>
+        </config-file>
+        <!-- <config-file target="res/values/colors.xml" parent="/resources">
+            <color name="result_view">#b0000000</color>
+        <color name="viewfinder_mask">#60000000</color>
+        </config-file>  --> 
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <!--            <uses-sdk android:minSdkVersion="21"/>-->
+            <uses-permission android:name="android.permission.VIBRATE"/>
+            <uses-permission android:name="android.permission.CAMERA"/>
+<!--            <uses-feature android:name="android.hardware.camera"/>-->
+            <uses-feature android:name="android.hardware.autofocus"/>
+            <uses-permission android:name="android.permission.FLASHLIGHT"/>
+<!--            <uses-feature android:name="android.hardware.camera"/>-->
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.thomas.BroadcastDemo.MipcaActivityCapture"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        </config-file>
+        
+        
+        <source-file src="src/android/src/com/thomas/BroadcastDemo/Scan.java" target-dir="src/com/thomas/BroadcastDemo"/>
+        <source-file src="src/android/src/com/thomas/BroadcastDemo/MipcaActivityCapture.java"
+        target-dir="src/com/thomas/BroadcastDemo"/>
+        <source-file src="src/android/src/com/thomas/view/ViewfinderResultPointCallback.java"
+        target-dir="src/com/thomas/view"/>
+        <source-file src="src/android/src/com/thomas/view/ViewfinderView.java" target-dir="src/com/thomas/view"/>
+        <source-file src="src/android/src/com/thomas/zxing/camera/AutoFocusCallback.java"
+        target-dir="src/com/thomas/zxing/camera"/>
+        <source-file src="src/android/src/com/thomas/zxing/camera/CameraConfigurationManager.java"
+        target-dir="src/com/thomas/zxing/camera"/>
+        <source-file src="src/android/src/com/thomas/zxing/camera/CameraManager.java"
+        target-dir="src/com/thomas/zxing/camera"/>
+        <source-file src="src/android/src/com/thomas/zxing/camera/FlashlightManager.java"
+        target-dir="src/com/thomas/zxing/camera"/>
+        <source-file src="src/android/src/com/thomas/zxing/camera/PlanarYUVLuminanceSource.java"
+        target-dir="src/com/thomas/zxing/camera"/>
+        <source-file src="src/android/src/com/thomas/zxing/camera/PreviewCallback.java"
+        target-dir="src/com/thomas/zxing/camera"/>
+        <source-file src="src/android/src/com/thomas/zxing/decoding/CaptureActivityHandler.java"
+        target-dir="src/com/thomas/zxing/decoding"/>
+        <source-file src="src/android/src/com/thomas/zxing/decoding/DecodeFormatManager.java"
+        target-dir="src/com/thomas/zxing/decoding"/>
+        <source-file src="src/android/src/com/thomas/zxing/decoding/DecodeHandler.java"
+        target-dir="src/com/thomas/zxing/decoding"/>
+        <source-file src="src/android/src/com/thomas/zxing/decoding/DecodeThread.java"
+        target-dir="src/com/thomas/zxing/decoding"/>
+        <source-file src="src/android/src/com/thomas/zxing/decoding/FinishListener.java"
+        target-dir="src/com/thomas/zxing/decoding"/>
+        <source-file src="src/android/src/com/thomas/zxing/decoding/InactivityTimer.java"
+        target-dir="src/com/thomas/zxing/decoding"/>
+        <source-file src="src/android/src/com/thomas/zxing/decoding/Intents.java"
+        target-dir="src/com/thomas/zxing/decoding"/>
+    </platform>
+    
+    
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="scan">
+                <param name="ios-package" value="CDVScan"/>
+            </feature>
+        </config-file>
+        
+        <config-file target="*-Info.plist">
+            <Boolean>
+                <key>View controller-based status bar appearance</key>
+                <Boolean>NO</Boolean>
+            </Boolean>
+            <String>
+                <key>Status bar style</key>
+                <String>UIStatusBarStyleLightContent</String>
+            </String>
+        </config-file>
+        
+        <header-file src="src/ios/CDVScan.h" />
+        <source-file src="src/ios/CDVScan.m" />
+        <header-file src="src/ios/CDVScanViewController.h" />
+        <source-file src="src/ios/CDVScanViewController.m" />
+        <source-file src="src/ios/scanSources" />
+        <framework src="QuartzCore.framework" />
+        
+    </platform>
+    
+</plugin>
