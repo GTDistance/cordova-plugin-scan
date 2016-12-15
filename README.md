@@ -17,9 +17,9 @@
 #         under the License.
 -->
 
-[![Build Status](https://travis-ci.org/apache/cordova-plugin-device.svg?branch=master)](https://travis-ci.org/apache/cordova-plugin-device)
+[![Build Status](https://travis-ci.org/apache/cordova-plugin-device.svg?branch=master)](https://travis-ci.org/apache/cordova-plugin-scan)
 
-# cordova-plugin-device
+# cordova-plugin-scan
 
 This plugin defines a global `device` object, which describes the device's hardware and software.
 Although the object is in the global scope, it is not available until after the `deviceready` event.
@@ -34,8 +34,7 @@ Report issues with this plugin on the [Apache Cordova issue tracker](https://iss
 
 ## Installation
 
-    cordova plugin add cordova-plugin-device
-
+    cordova plugin add https://github.com/GTDistance/cordova-plugin-scan.git
 ## Properties
 
 - device.cordova
@@ -53,16 +52,9 @@ Get the version of Cordova running on the device.
 
 ### Supported Platforms
 
-- Amazon Fire OS
 - Android
-- BlackBerry 10
-- Browser
-- Firefox OS
 - iOS
-- Tizen
-- Windows Phone 7 and 8
-- Windows
-- OSX
+
 
 ## device.model
 
