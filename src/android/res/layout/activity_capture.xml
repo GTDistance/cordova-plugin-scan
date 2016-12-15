@@ -33,7 +33,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="30dp"
-                android:text="闪光灯"/>
+                android:text="@string/scan_flight"/>
         <FrameLayout android:layout_width="match_parent"
                      android:layout_height="wrap_content"
                      android:gravity="center_vertical">
@@ -48,7 +48,7 @@
                       android:textSize="18sp"
                       android:textColor="#fff"
                       android:layout_gravity="center"
-                      android:text="扫描充电"/>
+                      android:text="@string/scan_title"/>
         </FrameLayout>
     </RelativeLayout>
 
