@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <SurfaceView
+                android:id="@+id/preview_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"/>
+
+        <com.thomas.view.ViewfinderView
+                android:id="@+id/viewfinder_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        <CheckBox
+                android:id="@+id/scan_flashlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/flashlight"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:textColor="#80ffffff"
+                android:textSize="16sp"
+                android:button="@null"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:text="@string/scan_flight"/>
+        <FrameLayout android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:gravity="center_vertical">
+
+            <ImageView android:id="@+id/iv_back"
+                       android:layout_width="45dp"
+                       android:layout_height="45dp"
+                       android:padding="10dp"
+                       android:src="@drawable/back"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="18sp"
+                      android:textColor="#fff"
+                      android:layout_gravity="center"
+                      android:text="@string/scan_title"/>
+        </FrameLayout>
+    </RelativeLayout>
+
+</FrameLayout>
