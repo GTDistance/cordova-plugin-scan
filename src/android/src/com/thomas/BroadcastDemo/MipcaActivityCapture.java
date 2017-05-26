@@ -144,6 +144,7 @@ public class MipcaActivityCapture extends Activity implements Callback {
         } else {
             Intent resultIntent = new Intent();
             Bundle bundle = new Bundle();
+            resultString = resultString.replaceAll("[^(a-zA-Z0-9\\u4e00-\\u9fa5)]", "");
             bundle.putString("result", resultString);
 //            bundle.putParcelable("bitmap", barcode);
             resultIntent.putExtras(bundle);
