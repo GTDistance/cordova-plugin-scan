@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Scan</string>
-    <string name="scan_tips">请扫描二维码/条形码</string>
-    <string name="scan_title">二维码/条形码</string>
-    <string name="scan_flight">闪光灯</string>
-</resources>

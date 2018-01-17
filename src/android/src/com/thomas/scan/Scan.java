@@ -7,6 +7,7 @@ import org.json.JSONException;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import com.thomas.scanlibrary.MipcaActivityCapture;
 
 
 
@@ -24,7 +25,7 @@ public class Scan extends CordovaPlugin {
         if("recognize".equals(action)) {
 
             Intent intent = new Intent();
-            intent.setClass(activity, ZbarCaptureActivity.class);
+            intent.setClass(activity, MipcaActivityCapture.class);
             cordova.startActivityForResult((CordovaPlugin) this,intent, SCANNIN_GREQUEST_CODE);
         }
         return true;
