@@ -43,7 +43,7 @@
 
         <source-file src="src/android/src/com/thomas/scan/Scan.java" target-dir="src/com/thomas/scan"/>
 
-        <framework src="com.github.GTDistance:androidlib-thomas-scan:+" />
+        <framework src="android-build.gradle" custom="true" type="gradleReference" />
 
     </platform>
     
