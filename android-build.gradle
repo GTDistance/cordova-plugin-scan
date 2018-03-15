@@ -3,5 +3,5 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.GTDistance:androidlib-thomas-scan:+'
+    compile 'com.github.GTDistance:androidlib-thomas-scan:1.0.5'
 }
