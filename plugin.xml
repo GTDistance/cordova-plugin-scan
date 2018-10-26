@@ -56,7 +56,11 @@
             </feature>
         </config-file>
         
-        <config-file target="*-Info.plist">
+         <preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
+         <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+             <string>$CAMERA_USAGE_DESCRIPTION</string>
+         </config-file>
+        <!-- <config-file target="*-Info.plist">
             <Boolean>
                 <key>View controller-based status bar appearance</key>
                 <Boolean>NO</Boolean>
@@ -65,7 +69,7 @@
                 <key>Status bar style</key>
                 <String>UIStatusBarStyleLightContent</String>
             </String>
-        </config-file>
+        </config-file> -->
         
         <header-file src="src/ios/CDVScan.h" />
         <source-file src="src/ios/CDVScan.m" />
