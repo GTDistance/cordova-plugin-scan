@@ -56,7 +56,7 @@
             </feature>
         </config-file>
         
-         <preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
+         <preference name="CAMERA_USAGE_DESCRIPTION" default="使用相机扫码" />
          <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
              <string>$CAMERA_USAGE_DESCRIPTION</string>
          </config-file>
